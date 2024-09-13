@@ -1,0 +1,7 @@
+custom_algolia.page:
+  path: '/custom-algolia'
+  defaults:
+    _controller: '\Drupal\custom_algolia\Controller\CustomAlgoliaController::content'
+    _title: 'Custom Algolia Page'
+  requirements:
+    _permission: 'access content'
