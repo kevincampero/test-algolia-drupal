@@ -14,9 +14,17 @@ class CustomAlgoliaController extends ControllerBase {
    * Returns a page with Algolia implementation.
    */
   public function content() {
-    return [
-      '#markup' => '<p>Página para la implementación de ALGOLIA.</p>',
+    $build = [
+      '#markup' => '<div id="searchbox"></div>
+                    <div id="hits"></div>
+                    <div id="pagination"></div>',
+      '#attached' => [
+        'library' => [
+          'custom_algolia/custom_algolia',
+        ],
+      ],
     ];
+    return $build;
   }
 
 }

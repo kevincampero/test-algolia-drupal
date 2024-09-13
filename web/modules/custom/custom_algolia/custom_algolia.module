@@ -1,6 +1,27 @@
 <?php
 
 /**
- * @file
- * Primary module hooks for custom algolia module.
+ * Implements hook_page_build().
  */
+function custom_algolia_page_build(&$page) {
+  // Add JavaScript files to the page
+  $page['#attached']['library'][] = 'custom_algolia/custom_algolia';
+}
+
+/**
+ * Implements hook_library_info().
+ */
+function custom_algolia_library_info() {
+  $libraries['custom_algolia'] = [
+    'js' => [
+      'js/algoliasearch.min.js' => [],
+      'js/instantsearch.min.js' => [],
+      'js/custom_algolia.js' => [],
+    ],
+    'dependencies' => [
+      'core/jquery',
+    ],
+  ];
+
+  return $libraries;
+}

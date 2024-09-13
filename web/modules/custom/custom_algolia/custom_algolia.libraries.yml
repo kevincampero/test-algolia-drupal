@@ -1,0 +1,7 @@
+custom_algolia:
+  js:
+    js/algoliasearch.min.js: {}
+    js/instantsearch.min.js: {}
+    js/custom_algolia.js: {}
+  dependencies:
+    - core/jquery
